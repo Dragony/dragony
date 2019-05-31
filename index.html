@@ -1,1 +1,52 @@
-Hello World
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="/assets/css/main.css" rel="stylesheet">
+</head>
+<body>
+<div class="content">
+    <header>
+        <div class="title">ma.ttias.ch</div>
+        <div class="socials">
+            <div class="socials__email">M</div>
+        </div>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+    </nav>
+    <div id="editor"></div>
+    <div id="admin">
+</div>
+    <button onclick="save()">Save</button>
+</div>
+<script src="/node_modules/@editorjs/editorjs/dist/editor.js"></script>
+<script src="/node_modules/@editorjs/header/dist/bundle.js"></script>
+<script src="/node_modules/@editorjs/list/dist/bundle.js"></script>
+<script src="/node_modules/@editorjs/simple-image/dist/bundle.js"></script>
+<script>
+    const editor = new EditorJS({
+        holder: 'editor',
+        tools: {
+            header: Header,
+            list: List,
+            image: SimpleImage
+        },
+        data: window.localStorage.editor ? JSON.parse(window.localStorage.editor) : null
+    });
+
+    function save(){
+        editor.save().then((output) =>{
+            window.localStorage.editor = JSON.stringify(output);
+            console.log(output)
+        }).catch((error) => {
+            throw error;
+        })
+    }
+</script>
+</body>
+</html>
