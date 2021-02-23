@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>projev demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@300;400;700&family=Work+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+                    <link rel="stylesheet" href="build/app.9688f3a6.css">
+        
+                    <script src="build/runtime.62651e63.js" defer></script><script src="build/397.a2e34c57.js" defer></script><script src="build/app.a31fb3cd.js" defer></script>
+            </head>
+    <body>
+        <header>
+            <div class="links">
+                <a href="/"><span>/</span> Blog</a>
+                <a href="/about.html" class="name"><span>&gt;</span> Mattias Gysin</a>
+            </div>
+        </header>
+        <div class="wrapper">
+                <h1>Operating an Agency</h1>
+    <h2 class="subtitle">Common mistakes seen in the wild</h2>
+    <p>
+        For the last decade I've been mainly working for Web Development Agencies. All Agencies
+        I've worked with seem to mostly wing it when it comes to operating their business. That's not to say they don't know their
+        area of expertise. Most, if not all, Agencies I have worked with know their craft very well. What I'm talking about is that most
+        companies don't seem to care to much about how to operate the system that is their company.
+    </p>
+    <p>
+        More than once this has led to overworked workers, crunch culture, employee churn and other negative effects. I believe
+        that what I'm going to show you here is at the heart of why these companies are often compared to "Sweatshops".
+    </p>
+    <p>
+        Let's go through the different fundamental ways of how these Companies usually operate.
+    </p>
+    <h2>Starting simple</h2>
+    <h2 class="subtitle">1 Employee, hourly billing</h2>
+    <p>
+        In the most basic case, you are your own Agency. Usually this concept is called consulting or freelancing.
+        Let's assume you are only taking jobs paid by the hour. So you go ahead and plan how many hours a year
+        you can work for clients and track that number during the year. <mark>The percentage number per employee reflects how
+        many hours you have billed, compared to how many you planned</mark> to work.
+    </p>
+    <div class="simulation">
+        <div id="freelance-app">
+            <Freelance></Freelance>
+        </div>
+    </div>
+    <p>
+        The running percentage will vary, depending on how many hours you were working. How many hours you can
+        work then depends on how big your projects are, how independent you can implement then, waiting for
+        client input, personal errands and so on. But all in all it's a good number to keep track of. Not least
+        so there are no surprises at then end of the year.
+    </p>
+    <p>
+        In this model there are few operational challenges. Your main focus is on your primary activity: Finding
+        clients and then working for them. As long as you keep doing that, you will be fine.
+    </p>
+    <blockquote>
+        <span>Key insights</span>
+        <ul>
+            <li>Freelancing on an hourly basis requires almost no operational skills</li>
+            <li>Of course you will still need good skills in your chosen area and in sales</li>
+            <li>Your income is capped by the number of hours you can work and thus bill your clients for</li>
+        </ul>
+    </blockquote>
+    <h2>Scaling up</h2>
+    <h2 class="subtitle">3 Employees, hourly billing</h2>
+    <p>
+        If we take the single freelancer concept one step further, we can setup a scenario of a small company of consultants that
+        work for an hourly rate. If I recall correctly this setup is commonly used in Lawyer practices with multiple partners. The
+        advantage here is that a dip in productivity (for example due to a gap in projects or personal reasons) can be
+        compensated by the others members of the team. In addition to the individual utilization we now also keep track
+        of the company wide <mark>employee utilization, which is calculated by summing up planned and worked hours</mark>.
+        This number, similar to a single freelancer, helps us keep a birds eye overview and warns us primarily if we're running out of work.
+    </p>
+    <div class="simulation">
+        <div id="agency-hourly">
+            <AgencyHourly></AgencyHourly>
+        </div>
+    </div>
+    <p>
+        This setup brings a certain risk of damaging moral, if one or more
+        team members have to be compensated for more than others. On the flipside it can
+        provide a lot more security than each person operating as an individual.
+    </p>
+    <blockquote>
+        <span>Key insights</span>
+        <ul>
+            <li>Similar to freelancing this model requires almost no operational skills</li>
+            <li>Your income is still capped by the number of hours you can work as a team</li>
+            <li>Be sure to make an agreement about cross compensation ahead of time</li>
+        </ul>
+    </blockquote>
+    <h2>A different Business Model</h2>
+    <h2 class="subtitle">1 Employee, paid by value</h2>
+    <p>
+        The main downside, to being paid by the hour (from an financial perspective), is that your income is capped by the amount of hours you work.
+        As soon as you stop working, you stop earning money. So instead you decide to set your prices according to the value
+        your work provides to your client, instead of setting your prices according to the number of hours you worked.
+        In practice this usually means doing fixed bid contracts.
+        Fixed bid contracts have the advantage that you can secure larger agreements upfront and you can increase your
+        return on investment if you can negotiate a good deal.
+    </p>
+    <p>
+        This will be the first time we introduce a new operational concept that will be important to keep track of. Since
+        we now have fixed prices, we need to keep track of our return on investment on these projects. <mark>To express the ROI
+        as a percentage number we compare the amount of time spent to the time planned</mark> for the project. Going above
+        the planned number of hours will reduce our ROI and thus reduce the percentage in our simulation.
+    </p>
+    <p>
+        Since we now have two key metrics: Utilization and Project Status, we calculate our overall <mark>Company Health by multiplying
+        the two previous percentages</mark> with each other. This will give us a new performance indicator that gives us an estimate of how
+        well our company is doing.
+    </p>
+    <div class="simulation">
+        <div id="freelance-by-value">
+            <FreelanceByValue></FreelanceByValue>
+        </div>
+    </div>
+    <p>
+        The main insight from this simulation is what I believe to be the most important takeaway from this article.
+        <mark>Changing from charging hourly to doing fixed bid projects brings with it paradigm shift</mark>. I have seen many
+        companies struggle with. In our example the freelancer was very productive (the percentages should be almost 100%).
+        Even though he utilized his time very well, his overall Company Health is low. Why is that? All of the projects
+        went over budget, which is easy to see in the simulation and (usually) easy to measure in the real world.
+    </p>
+    <p>
+        There is a long list of possible root causes, but what I want to focus on is the idea
+        that in this case bad project management caused a lot of distress. Thanks to how we've setup
+        our measurements we can also tell that compensating the overdue projects with additonal hours from our employees
+        is fighting an uphill battle. A project that comes in 20% over budget requires an additional 25% billable hours
+        to compensate. This is a problem for two reasons. First because those hours could have been invested somewhere else.
+        Second if you ask your employees to work overtime, your workweek will go from 40 hours to 50 hours, which won't be
+        sustainable for long.
+    </p>
+    <blockquote>
+        <span>Key insights</span>
+        <ul>
+            <li>Working with fixed bid (budgeted) projects requires at least some operational experience</li>
+            <li>Your income is no longer tied to the number of hours you work</li>
+            <li>Failing project management can lead to crunch for your employees, if not identified correctly</li>
+            <li>Crunch by employees can be a short term solution, but will probably create churn in the long run</li>
+        </ul>
+    </blockquote>
+    <h2>Scaling up, again</h2>
+    <h2 class="subtitle">3 Employees, paid by value</h2>
+    <p>
+        Next let's take a look at how our new "paid by value" model works when we add a number of employees and projects.
+        Scaling up our paid by value business model keeps the focus on good project management and adds some of the risk
+        we saw in the pay by hour concept.
+    </p>
+    <p>
+        This simulation has multiple scenarios you can play through. Each of them have a different problem area.
+        Take some time and play around with the three different scenarios and see what you can learn from the simulation.
+        Once you're done, take a look at my conclusions below.
+    </p>
+    <div class="full-bleed">
+        <div id="agency-by-value" class="container simulation large">
+            <AgencyByValue></AgencyByValue>
+        </div>
+    </div>
+    <p>
+        Starting with scenario #1 (Weak Project Management) the simulation already shows something I always felt
+        when working in agencies, but could never put my finger on. A lot of running projects pulls the average "Project Status"
+        way up. So one consequence is that having as many open projects as possible is good for business - at least
+        statistically speaking. <mark>I have seen too many companies cover bad projects with the budget of new ones.</mark>
+        Sometimes willingly, sometimes because they didn't even realize what was happening.
+        In practice of course, that method is neither good for the company or the customers.
+        The real problem is bad project planning and will continue to be until addressed.
+    </p>
+    <p>
+        Most Agencies will be familiar with scenario #2 (Low Utilization), because this is the metric that
+        is most intuitive and easiest to track. Anyone who has had to bill their hours to a client will know
+        the chore of booking your time in whatever software you're using. The only step missing is to sum
+        up the bookings and you've already got a comparable number month over month. <mark>Because this number is so easy
+        to track it's also often mistaken as a solution for everything</mark>. Be careful of that.
+    </p>
+    <p>
+        The last scenario - the balanced one - is what you should be shooting for. The most important thing to recognize
+        here is that, as discussed above, you need both a well utilized work force and well planned projects.
+    </p>
+    <blockquote>
+        <span>Key insights</span>
+        <ul>
+            <li>Projects that go bad can cost you more than you can compensate with your own time</li>
+            <li>Low Utilization is meassurable almost immediately, bad project management will take a moment to uncover</li>
+            <li>Don't fall into the trap of repeatedly filling financial gaps by acquiring new projects</li>
+            <li>Plan projects ahead of time to keep employee utilization up</li>
+        </ul>
+    </blockquote>
+    <!--<h2>Quality</h2>
+    <h2 class="subtitle">A note on outcomes</h2>
+    <p>
+        In all these simlations there is no value to indicate the quality of the work done. Of course quality work is an important
+        outcome in projects. In these scenarios though, the quality of work is very much in the eye of the beholder. If you're
+        doing fixed bid projects, I assume you can more or less meet the expectations you set at the beginning. This process
+        is a big and important part of project management. If you're doing hourly contracts, the quality is also important,
+        but you customer is carrying most of the financial risks involved.
+    </p>
+    <p>
+        Nevertheless there are still many things to be said about quality outcomes, so let's save that discussion for another time.
+    </p>-->
+    <h2>Conclusion</h2>
+    <h2 class="subtitle">My hypothesis</h2>
+    <p>
+        Lastly I would like explain why I think this is important. Often Web Development Agencies are founded by young individuals
+        because the initial Business Model is easy and intuitive. They become very good at what they do and focus on their craft,
+        which in itself is a good thing. Once the size and complexity of the projects outgrow the scope of one or two people
+        things might become difficult though. That is the size during which internal coordination and planning become more and more
+        important. The biggest danger comes from not recognizing how the concept of your business has changed. It is during
+        this phase that the leaders need to initiate change to support new paradigms. In the examples above I would suggest
+        that investing more time into planning and managing projects becomes paramount.
+    </p>
+    <p>
+        The perverse reality is that, in the early years of a typical Agency, they have gotten extremely good at eliminating
+        most non-Client work. If we reflect on the first two scenarios it becomes obvious why. It is the only
+        wait to ensure the company makes enough money. But, as I have hopefully demonstrated, some non-Client
+        work will be needed to manage the risks to ensure your success in large bid based contracts.
+    </p>
+    <p>
+        The introduction of these roles is in itself not an easy task. It is hard to find a balance between reorganising
+        and continued work for your clients. But in the end it will be worth it and your company will be better off for it.
+    </p>
+    <blockquote>
+        <span>Key insights</span>
+        <ul>
+            <li>If your business is growning, change is inevitable</li>
+            <li>It may be necessary to unlearn old habbits</li>
+            <li>Doubling down on what you know is not always the correct solution</li>
+        </ul>
+    </blockquote>
+    <h2>Thank you for reading</h2>
+    <p>
+        I hope you enjoyed the article and maybe even learned something. If you would like to stay in contact I have
+        a <a href="http://eepurl.com/hrkncH">mailing list</a> or select one of my <a href="https://ma.ttias.ch/about.html#social">socials</a>.
+    </p>
+            </div>
+        <footer>
+            <div class="fin">
+                fin
+            </div>
+            <div class="social">
+
+            </div>
+        </footer>
+    </body>
+</html>
