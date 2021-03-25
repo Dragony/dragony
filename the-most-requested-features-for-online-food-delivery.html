@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>The most requested features for online food delivery</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="canonical" href="http://cms.ma.ttias.ch/the-most-requested-features-for-online-food-delivery.html">
+                    <link rel="stylesheet" href="/build/app.css">
+                            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PKFYZ4V14"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-8PKFYZ4V14');
+            </script>
+            </head>
+    <body>
+        <header>
+            <div class="links">
+                <a href="/"><span>≫</span> Blog</a>
+                <a href="/about.html" class="name"><span>▶</span> About me</a>
+                <a href="/services.html" class="name"><span>▶</span> My services</a>
+            </div>
+            <div class="preview">
+
+            </div>
+        </header>
+        <main class="wrapper">
+                <div class="header"><h2>The most requested features for online food delivery</h2></div>
+<p>My main occupation for the past few years has been building ecommerce platforms for large Food Delivery businesses. Unsurprisingly they usually request very similar functionality. What is surprising, is that there are no ecommerce Systems that offer those features out of the box. Here is a list of them:</p>
+<blockquote><span>Key insights</span><ul><li>Each order has a requested delivery (or pickup) time attached</li>
+<li>The online presence needs to reflect store opening hours<br></li>
+<li>An order can only be completed if the customer is in a specific region</li>
+<li>The number of orders needs to be throttled per time period</li>
+<li>Support any number of locations that each have their own products, payment methods, delivery methods and promotion codes</li>
+<li>Products that are only available for specific delivery or pickup times</li>
+</ul>
+</blockquote><div class="header"><h2>Each order has a requested delivery (or pickup) time attached</h2></div>
+<p>As you can probably imagine, food delivery is time critical. For one, because people tend to order because they're hungry. But also because food tends to decay over time. So if you're ordering a meal online you usually expect to receive it within a few hours of when it was cooked. For this reason every food order has an attached time for when the customer plans to receive (and probably consume) the ordered food.</p>
+<p>On the store frontend this information usually ends up as some kind of datepicker that shows available dates and times for when an order can be prepared:</p>
+<div class="img_pnl "><img src="/images/date_select.png" /></div>
+<p>And the associated time picker:</p>
+<div class="img_pnl "><img src="/images/time_select.png" /></div>
+<p>There are some details to this implementation, such as verifying the date is not in the past, and that the date has not since become invalid. That can happen if the opening hours were changed, or the date has become unavailable for some other reason (see throttling orders).</p>
+<div class="header"><h2>The online presence needs to reflect store opening hours</h2></div>
+<p>Now that we've established why each order needs to have a time attached, it becomes evident that our online presence needs to support some kind of opening hours.</p>
+<p>Since the time between cooking and consumption is relevant, we need to ensure that orders can only be made for a time when there is someone ready to cook in the kitchen.</p>
+<p>This brings with it a whole bunch of complexity we need to be able to support in the backend:</p>
+<ul><li>Standard opening hours when the kitchen is available</li>
+<li>Special opening hours for bank holidays or other temporary variances in availability</li>
+<li>Availability of delivery network (it's expensive to have someone ready all day)</li>
+<li>Minimum time required to prepare and deliver an order</li>
+</ul>
+<p>Additionally these variables might be different for orders in the restaurant, delivery, takeaway, and individual physical kitchens. As such there is usually no such thing as "the opening hours". There are a multitude of opening hours, depending on a number of variables.</p>
+<div class="header"><h2>An order can only be completed if the customer is in a specific region</h2></div>
+<p>Contrary to more traditional ecommerce stores, there are scenarios in food delivery where a customer must be prevented from ordering in the first place.</p>
+<p>This adds to the previous point of food decaying. Since the time between cooking and consumption needs to be short, food deliveries are most often picked up or delivered via some sort of local delivery network. Many local restaurants manage their own delivery by simply driving their orders around in a car. Of course there are also platforms that offer&nbsp; to manage the logistics for you. Some of these are Uber Eats and Doordash for the USA, but there are a large number of regional logistics &amp; delivery companies.</p>
+<p>Regardless of what solution you choose, there will be some kind of limit where the cost of the delivery outweighs the price of the order. For that reason it is vital that your online store can support this scenario.</p>
+<p>The correct way to validate this is a topic of debate. Some stores require you to enter your location before you see any products. Others validate your order at the end of the checkout process. It all comes down to weighing the ease of use and accessibility versus when to validate that the order can actually be fulfilled.</p>
+<p>An example of how Uber Eats handles locations that can't be delivered to:</p>
+<div class="img_pnl "><img src="/images/uber_eats_example.png" /></div>
+<p>They simply don't display any products at all.</p>
+<p>Doordash handles this case a little better:</p>
+<div class="img_pnl "><img src="/images/doordash_example.png" /></div>
+<div class="header"><h2>Number of orders need to be throttled per time period</h2></div>
+<p>Let's assume you are a thriving online food delivery business. Each Friday hundreds of orders come in. You've made it!</p>
+<p>Except now you have probably a new problem: 90% of the orders gravitate to two points of the day: noon and evening. The reason why is obvious, it's when people usually eat their meals.</p>
+<p>Dealing with these kinds of peaks is hard, because it will be hard to scale your kitchen and staff to perfectly match the number of incoming orders. This is where your online shop can help out.</p>
+<p>Instead of just letting everyone order at the same time, we can restrict the number of orders for specific time periods. So instead of having everyone order their lunch for 12:00, we can restrict that slot to 15 orders (for example). Everyone else needs to decide if they want their lunch at 11:45 or 12:15.</p>
+<div class="header"><h2>Support any number of locations that each have their own configuration</h2></div>
+<p>In the point about opening hours we touched on the fact that there might be multiple kitchens your online store delivers to. Since they are different physical locations they can differ in basically every way possible:</p>
+<ul><li>Opening hours</li>
+<li>Available products</li>
+<li>Payment methods</li>
+<li>Delivery Times</li>
+<li>Delivery Regions</li>
+<li>Availability of Pickup or Delivery</li>
+<li>Promotions codes</li>
+<li>Marketing materials</li>
+</ul>
+<p>Another way of thinking about it is that each of your kitchens might be their very own store and online shop. That's a lot to ask of typical ecommerce solutions.</p>
+<p>Most of this complexity can be hidden from the customer by simply asking them to choose at location at the beginning of the order process:</p>
+<div class="img_pnl "><img src="/images/location_select.png" /></div>
+<p>This deceptively simple widget carries with it a lot of work for many of your backend systems (Webshop, CRM, PIM, etc).</p>
+<div class="header"><h2>Products that are only available for specific delivery or pickup times</h2></div>
+<p>An first glance this point may be the same as previous. It is, but I want to bring special attention to it because lots of restaurants offer some sort of Lunch Menus. Incase you're somehow not aware: Lunch menus are special deals that are prepared specifically for lunch time. Usually these meals are prepared in bulk and are cheaper because of it.</p>
+<p>This concept brings a few interesting requirements to it for our online shop: These products are only available for a specific delivery time (not order time), and they probably change every day.</p>
+<p>Most merchants I've worked with couldn't muster the internal organisation to produce a whole product with nutrients, images, and descriptions for each daily lunch meal. So most of the time it ends up being a placeholder product with a link to a PDF (or similar).</p>
+<p>Nonetheless, the requirement for the specific delivery time still exists. In order to support this, the customer needs to select a delivery time before they see the list of products. That's something our two examples (Uber Eats and Doordash) don't support yet.</p>
+<div class="header"><h2>In Summary</h2></div>
+<p>Bringing a restaurant online with a sufficient food delivery solution is not easy. Especially since there are no platforms or ecommerce systems that support these requirements out of the box. There are easy ways around this by skipping some of the features and making due. Fully supporting a real food delivery chain is still difficult though.</p>
+
+    <h2>Thank you for reading</h2>
+    <p>
+        I hope you enjoyed the article and maybe even learned something.
+        If you would like to stay in contact I have a <a href="http://eepurl.com/hrkncH">mailing list</a>
+        or you can reach out to me via <a href="https://ma.ttias.ch/about.html#social">social media</a>.
+    </p>
+    <footer class="full-bleed">
+        <div class="fin">
+            fin
+        </div>
+    </footer>
+        </main>
+            </body>
+</html>
