@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>How to setup valid SSL on WSL</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="canonical" href="http://cms.ma.ttias.ch/how-to-setup-valid-ssl-on-wsl.html">
+                    <link rel="stylesheet" href="/build/app.css">
+                            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PKFYZ4V14"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-8PKFYZ4V14');
+            </script>
+            </head>
+    <body>
+        <header>
+            <div class="links">
+                <a href="/"><span>≫</span> Blog</a>
+                <a href="/about.html" class="name"><span>▶</span> About me</a>
+                <a href="/services.html" class="name"><span>▶</span> Work with me</a>
+            </div>
+            <div class="preview">
+
+            </div>
+        </header>
+        <main class="wrapper">
+                <div class="header"><h2>How to setup valid SSL on WSL</h2></div>
+<p>Having a valid SSL certificate locally seemed to be the holy grail to me just 24 hours ago. Today I bit the bullet and went through installing one. In this article I'll show you how it can be done in about 15 minutes. I'm using WSL (Windows Subsystem for Linux) to host my code and application servers (Apache, Node, etc) and accessing the sites via the Windows host.</p>
+<p>First, a screenshot of the finished product (my OS is german):</p>
+<div class="img_pnl "><img src="/images/image.png" /></div>
+<div class="header"><h2>Step 1: Generate SSL Cert</h2></div>
+<p>I suggest you create a new directory to work in and make sure you have openssl installed.</p>
+<pre><code>mkdir cert
+cd cert
+openssl version</code></pre>
+<p>Next we're going to create a configuration file for openssl called "v3.ext". The name really doesn't matter, but if you use the same name it will make copy &amp; pasting easier.&nbsp;Be sure to replace the [[DOMAIN]] placeholder with the domain name you wish to use.</p>
+<pre><code>[req]
+distinguished_name = req_distinguished_name
+x509_extensions = v3_req
+prompt = no
+[req_distinguished_name]
+C = US
+ST = VA
+L = SomeCity
+O = MyCompany
+OU = MyDivision
+CN = [[DOMAIN]]
+
+[v3_req]
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = [[DOMAIN]]
+</code></pre>
+<p>Next we can generate the cert files with the following command:</p>
+<pre><code>openssl req -newkey rsa:4096 -x509 -sha256 -days 3650 -nodes -out local.crt -keyout local.key -extfile v3.ext</code></pre>
+<p>Lastly, if you need a .pem file you can simply use these two command to create one:</p>
+<pre><code>cat local.key > local.pem
+cat local.crt >> local.pem</code></pre>
+<p>Now you should have all the cert files you need.</p>
+<div class="header"><h2>Step 2: Adding the Certificate as a trusted Authority in Windows 10</h2></div>
+<p>You can use the file that was generated above to configure your applications, but the certificate will show up as untrusted in the browser. To make the Certificate trusted (on your local computer) follow these steps:</p>
+<ol><li>Type "mmc" into the start menu</li>
+<li>Open the "Microsoft Management Console"</li>
+<li>Select "File" -&gt; Add/Remove Snap-in... or use the hotkey CTRL + M</li>
+<li>Select "Certificates" and click "Add &gt;"</li>
+<li>In the popup select "My user account" and "Finish"</li>
+<li>Close the dialog by selecting "OK"</li>
+<li>In the Tree unter "Console Root" (on the left of the window) select the option "Certificates", then "Trusted Root Certification Authorities" and lastly "Certificates"</li>
+<li>Select "Action" from the top bar and then "All Tasks" and "Import..."</li>
+<li>Click next and navigate to the .crt file you created on your WSL</li>
+<li>Click next again two times and then "Finish"</li>
+<li>You will be warned that adding a certificate is a security risk. Confirm you want to add it.</li>
+<li>Now you can close the window. You don't need to save your changes (it only saves the view, not the changed setting)</li>
+</ol>
+<div class="header"><h2>Step 3: Add your certificate to the application</h2></div>
+<p>Now the only thing left to do is configure your application to use the new certificate. There are already a number of tutorials out there for different applications: <a href="https://www.rapidsslonline.com/blog/install-ssl-certificate-on-apache2-ubuntu-server/">Apache2</a>, <a href="http://nginx.org/en/docs/http/configuring_https_servers.html">nginx</a>&nbsp;or, like in my case, for the <a href="https://webpack.js.org/configuration/dev-server/#devserverhttps">Vue CLI</a> tool.</p>
+<div class="header"><h2>Troubleshooting</h2></div>
+<p>Here are some issues I had and the solutions I found:</p>
+<p><a href="https://stackoverflow.com/questions/43665243/invalid-self-signed-ssl-cert-subject-alternative-name-missing">Subject Alternative Name Missing</a></p>
+<p><a href="https://stackoverflow.com/questions/44145936/chrome-active-content-with-certificate-errors">Active content with certificate errors</a></p>
+
+    <h2>Thank you for reading</h2>
+    <p>
+        I hope you enjoyed the article and maybe even learned something.
+        If you would like to stay in contact I have a <a href="http://eepurl.com/hrkncH">mailing list</a>
+        or you can reach out to me via <a href="https://ma.ttias.ch/about.html#social">social media</a>.
+    </p>
+    <footer class="full-bleed">
+        <div class="fin">
+            fin
+        </div>
+    </footer>
+        </main>
+            </body>
+</html>
