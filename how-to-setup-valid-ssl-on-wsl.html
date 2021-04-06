@@ -62,7 +62,7 @@ subjectAltName = @alt_names
 DNS.1 = [[DOMAIN]]
 </code></pre>
 <p>Next we can generate the cert files with the following command:</p>
-<pre><code>openssl req -newkey rsa:4096 -x509 -sha256 -days 3650 -nodes -out local.crt -keyout local.key -extfile v3.ext</code></pre>
+<pre><code>openssl req -newkey rsa:4096 -x509 -sha256 -days 3650 -nodes -out local.crt -keyout local.key -config v3.ext</code></pre>
 <p>Lastly, if you need a .pem file you can simply use these two command to create one:</p>
 <pre><code>cat local.key > local.pem
 cat local.crt >> local.pem</code></pre>
