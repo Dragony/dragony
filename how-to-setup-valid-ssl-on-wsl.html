@@ -30,8 +30,8 @@
             </div>
         </header>
         <main class="wrapper">
-                <div class="header"><h2>How to setup valid SSL on WSL</h2></div>
-<p>Having a valid SSL certificate locally seemed to be the holy grail to me just 24 hours ago. Today I bit the bullet and went through installing one. In this article I'll show you how it can be done in about 15 minutes. I'm using WSL (Windows Subsystem for Linux) to host my code and application servers (Apache, Node, etc) and accessing the sites via the Windows host.</p>
+                <div class="header"><h1>How to setup valid SSL on WSL</h1></div>
+<p class="meta">About 2 minutes to read. Posted on April 5, 2021 14:41<p>Having a valid SSL certificate locally seemed to be the holy grail to me just 24 hours ago. Today I bit the bullet and went through installing one. In this article I'll show you how it can be done in about 15 minutes. I'm using WSL (Windows Subsystem for Linux) to host my code and application servers (Apache, Node, etc) and accessing the sites via the Windows host.</p>
 <p>First, a screenshot of the finished product (my OS is german):</p>
 <div class="img_pnl "><img src="/images/image.png" /></div>
 <div class="header"><h2>Step 1: Generate SSL Cert</h2></div>
@@ -101,5 +101,17 @@ cat local.crt >> local.pem</code></pre>
         </div>
     </footer>
         </main>
-            </body>
+                <script>
+            function loadEmbed(el) {
+                let iframe = document.createElement('iframe');
+                iframe.src = el.dataset.embed;
+                iframe.frameBorder = "0";
+                iframe.allowFullscreen = "";
+                el.parentNode.replaceChild(iframe, el);
+            }
+            document.querySelectorAll('.embed-container button').forEach(function(el){
+                el.addEventListener('click', loadEmbed.bind(this, el));
+            });
+        </script>
+    </body>
 </html>

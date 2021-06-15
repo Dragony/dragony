@@ -30,8 +30,8 @@
             </div>
         </header>
         <main class="wrapper">
-                <div class="header"><h2>What I wish I knew before building a Shopify App</h2></div>
-<p>I spent the last week building an App for the Shopify Marketplace. It was unlike anything I've done before on the Web. Knowing some of the things I'm going to share, before you start building, could save you some headache.</p>
+                <div class="header"><h1>What I wish I knew before building a Shopify App</h1></div>
+<p class="meta">About 6 minutes to read. Posted on March 19, 2021 10:56<p>I spent the last week building an App for the Shopify Marketplace. It was unlike anything I've done before on the Web. Knowing some of the things I'm going to share, before you start building, could save you some headache.</p>
 <p>Here is the summary of my experience, more details below.</p>
 <blockquote><span>Key insights</span><ul><li>They expect you to make a onepage application (SPA)</li>
 <li>The polaris design system officially only supports react</li>
@@ -99,5 +99,17 @@
         </div>
     </footer>
         </main>
-            </body>
+                <script>
+            function loadEmbed(el) {
+                let iframe = document.createElement('iframe');
+                iframe.src = el.dataset.embed;
+                iframe.frameBorder = "0";
+                iframe.allowFullscreen = "";
+                el.parentNode.replaceChild(iframe, el);
+            }
+            document.querySelectorAll('.embed-container button').forEach(function(el){
+                el.addEventListener('click', loadEmbed.bind(this, el));
+            });
+        </script>
+    </body>
 </html>

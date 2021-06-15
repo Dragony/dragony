@@ -30,8 +30,8 @@
             </div>
         </header>
         <main class="wrapper">
-                <div class="header"><h2>How top performers can be a curse for Agencies</h2></div>
-<p><i>If this is your first time reading one of my blog articles, be sure to take a look at my <a href="/the-basics-of-running-an-agency.html">definition of agencies</a>&nbsp;to make sure we're on the same page. The short version is that I'm talking about small and medium sized buisinesses or individuals doing contract work.</i></p>
+                <div class="header"><h1>How top performers can be a curse for Agencies</h1></div>
+<p class="meta">About 4 minutes to read. Posted on March 10, 2021 14:58<p><i>If this is your first time reading one of my blog articles, be sure to take a look at my <a href="/the-basics-of-running-an-agency.html">definition of agencies</a>&nbsp;to make sure we're on the same page. The short version is that I'm talking about small and medium sized buisinesses or individuals doing contract work.</i></p>
 <p>Anywhere you work there will always be more experienced and less experienced employees. This usually reflects in their performance and pay. Thus you need to find a way to pay your senior employees according to their experience. If you don't, you might not be able to stay competitive. I would like to lead you through some scenarios that are often used in Agencies, but do not enable that kind of compensation structure.</p>
 <div class="header"><h2>The fixed hourly rate</h2></div>
 <p>To determine the minimum amount an Agency needs to earn per hour sold, we can use this formula:</p>
@@ -83,5 +83,17 @@
         </div>
     </footer>
         </main>
-            </body>
+                <script>
+            function loadEmbed(el) {
+                let iframe = document.createElement('iframe');
+                iframe.src = el.dataset.embed;
+                iframe.frameBorder = "0";
+                iframe.allowFullscreen = "";
+                el.parentNode.replaceChild(iframe, el);
+            }
+            document.querySelectorAll('.embed-container button').forEach(function(el){
+                el.addEventListener('click', loadEmbed.bind(this, el));
+            });
+        </script>
+    </body>
 </html>

@@ -31,7 +31,7 @@
         </header>
         <main class="wrapper">
                 <div class="header"><h1>The basics of running a Web Agency</h1></div>
-<div class="header"><h2>Index</h2></div>
+<p class="meta">About 2 minutes to read. Posted on December 9, 2020 14:00<div class="header"><h2>Index</h2></div>
 <ul><li>My definition of a Web Agency</li>
 <li>How do these agencies usually earn money?</li>
 <li>Who are the typical customers?</li>
@@ -79,5 +79,17 @@
         </div>
     </footer>
         </main>
-            </body>
+                <script>
+            function loadEmbed(el) {
+                let iframe = document.createElement('iframe');
+                iframe.src = el.dataset.embed;
+                iframe.frameBorder = "0";
+                iframe.allowFullscreen = "";
+                el.parentNode.replaceChild(iframe, el);
+            }
+            document.querySelectorAll('.embed-container button').forEach(function(el){
+                el.addEventListener('click', loadEmbed.bind(this, el));
+            });
+        </script>
+    </body>
 </html>

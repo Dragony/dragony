@@ -30,8 +30,8 @@
             </div>
         </header>
         <main class="wrapper">
-                <div class="header"><h2>The most requested features for online food delivery</h2></div>
-<p>My main occupation for the past few years has been building ecommerce platforms for large Food Delivery businesses. Unsurprisingly they usually request very similar functionality. What is surprising, is that there are no ecommerce Systems that offer those features out of the box. Here is a list of them:</p>
+                <div class="header"><h1>The most requested features for online food delivery</h1></div>
+<p class="meta">About 5 minutes to read. Posted on March 25, 2021 15:00<p>My main occupation for the past few years has been building ecommerce platforms for large Food Delivery businesses. Unsurprisingly they usually request very similar functionality. What is surprising, is that there are no ecommerce Systems that offer those features out of the box. Here is a list of them:</p>
 <blockquote><span>Key insights</span><ul><li>Each order has a requested delivery (or pickup) time attached</li>
 <li>The online presence needs to reflect store opening hours<br></li>
 <li>An order can only be completed if the customer is in a specific region</li>
@@ -106,5 +106,17 @@
         </div>
     </footer>
         </main>
-            </body>
+                <script>
+            function loadEmbed(el) {
+                let iframe = document.createElement('iframe');
+                iframe.src = el.dataset.embed;
+                iframe.frameBorder = "0";
+                iframe.allowFullscreen = "";
+                el.parentNode.replaceChild(iframe, el);
+            }
+            document.querySelectorAll('.embed-container button').forEach(function(el){
+                el.addEventListener('click', loadEmbed.bind(this, el));
+            });
+        </script>
+    </body>
 </html>

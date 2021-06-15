@@ -30,8 +30,8 @@
             </div>
         </header>
         <main class="wrapper">
-                <div class="header"><h2>Why requirements are hard</h2></div>
-<p>Software projects are notorious for how hard it is to define what the software is supposed to do. If you're reading this, you have probably expierenced this yourself. There are the usual suspects that are hard to get right: Communicating with the right people, navigating internal politics and lack of experience for some of the involved parties are things that come to mind right away.</p>
+                <div class="header"><h1>Why requirements are hard</h1></div>
+<p class="meta">About 3 minutes to read. Posted on March 3, 2021 10:03<p>Software projects are notorious for how hard it is to define what the software is supposed to do. If you're reading this, you have probably expierenced this yourself. There are the usual suspects that are hard to get right: Communicating with the right people, navigating internal politics and lack of experience for some of the involved parties are things that come to mind right away.</p>
 <p>Today I would like to suggest a more subtle reason why surprises keep popping up, even though you did your best to document every process, every field and every step of whatever scenario you are trying to bring to your application.</p>
 <div class="header"><h2>Let's start with an example</h2></div>
 <p>Can you drive a car? If you can, I assume you're decent at it. Otherwise you wouldn't be allowed to drive on public roads. Now that we've settled that, I will consult you for the new car I'm builing for you. What are the main requirements that the car needs to fullfill?</p>
@@ -78,5 +78,17 @@
         </div>
     </footer>
         </main>
-            </body>
+                <script>
+            function loadEmbed(el) {
+                let iframe = document.createElement('iframe');
+                iframe.src = el.dataset.embed;
+                iframe.frameBorder = "0";
+                iframe.allowFullscreen = "";
+                el.parentNode.replaceChild(iframe, el);
+            }
+            document.querySelectorAll('.embed-container button').forEach(function(el){
+                el.addEventListener('click', loadEmbed.bind(this, el));
+            });
+        </script>
+    </body>
 </html>

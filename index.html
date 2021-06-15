@@ -36,6 +36,18 @@
     <div class="posts">
                     <div class="post latest">
                 <div class="title">
+                    <a href="/fulfilling-my-childhood-dream-to-build-a-browser-game.html">Fulfilling my childhood dream to build a browser game</a>
+                </div>
+                <div class="date">
+                                            About 8 minutes to read.
+                                        Posted on June 11, 2021 09:28
+                </div>
+                <div class="read">
+                    <a href="/fulfilling-my-childhood-dream-to-build-a-browser-game.html">Read article</a>
+                </div>
+            </div>
+                    <div class="post ">
+                <div class="title">
                     <a href="/websockets-are-a-mess-there-are-better-options.html">WebSockets are a mess, there are better options</a>
                 </div>
                 <div class="date">
@@ -143,5 +155,17 @@
             </div>
             </div>
         </main>
-            </body>
+                <script>
+            function loadEmbed(el) {
+                let iframe = document.createElement('iframe');
+                iframe.src = el.dataset.embed;
+                iframe.frameBorder = "0";
+                iframe.allowFullscreen = "";
+                el.parentNode.replaceChild(iframe, el);
+            }
+            document.querySelectorAll('.embed-container button').forEach(function(el){
+                el.addEventListener('click', loadEmbed.bind(this, el));
+            });
+        </script>
+    </body>
 </html>

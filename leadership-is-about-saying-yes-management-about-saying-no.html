@@ -30,8 +30,8 @@
             </div>
         </header>
         <main class="wrapper">
-                <div class="header"><h2>Leadership is about saying yes, Management about saying no</h2></div>
-<p>As a curios observer of everyday systems this thought came to me a few days ago. Due to the different nature of Leadership and Management they can sometimes be told apart by the two words "Yes" and "No".</p>
+                <div class="header"><h1>Leadership is about saying yes, Management about saying no</h1></div>
+<p class="meta">About 2 minutes to read. Posted on April 1, 2021 14:00<p>As a curios observer of everyday systems this thought came to me a few days ago. Due to the different nature of Leadership and Management they can sometimes be told apart by the two words "Yes" and "No".</p>
 <p>In short:</p>
 <blockquote><span>Key insights</span><ul><li>(Servant)&nbsp;Leadership is about empowering and enabling people</li>
 <li>Empowering and enabling can mean trying new things and pushing people out of their comfort zone&nbsp;— i.e. saying Yes<br></li>
@@ -67,5 +67,17 @@
         </div>
     </footer>
         </main>
-            </body>
+                <script>
+            function loadEmbed(el) {
+                let iframe = document.createElement('iframe');
+                iframe.src = el.dataset.embed;
+                iframe.frameBorder = "0";
+                iframe.allowFullscreen = "";
+                el.parentNode.replaceChild(iframe, el);
+            }
+            document.querySelectorAll('.embed-container button').forEach(function(el){
+                el.addEventListener('click', loadEmbed.bind(this, el));
+            });
+        </script>
+    </body>
 </html>

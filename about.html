@@ -49,5 +49,17 @@
         <li class="email">E-Mail: <span>h<span>spamprotection</span></span><span>i</span>&commat;<span>wa<span>spamprotection</span>sd.ch</span></li>
     </ul>
         </main>
-            </body>
+                <script>
+            function loadEmbed(el) {
+                let iframe = document.createElement('iframe');
+                iframe.src = el.dataset.embed;
+                iframe.frameBorder = "0";
+                iframe.allowFullscreen = "";
+                el.parentNode.replaceChild(iframe, el);
+            }
+            document.querySelectorAll('.embed-container button').forEach(function(el){
+                el.addEventListener('click', loadEmbed.bind(this, el));
+            });
+        </script>
+    </body>
 </html>
