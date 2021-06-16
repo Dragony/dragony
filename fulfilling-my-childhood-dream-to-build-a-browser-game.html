@@ -31,21 +31,21 @@
         </header>
         <main class="wrapper">
                 <div class="header"><h1>Fulfilling my childhood dream to build a browser game</h1></div>
-<p class="meta">About 8 minutes to read. Posted on June 11, 2021 09:28<p>When I was a teenager and writing my very first few lines of code, I dreamed of building a multiplayer game. Back then I was using the <a href="http://www.conitec.net/images/a4info.htm">3D GameStudio</a> A5 game engine. Sadly that meant to even try multiplayer (that was supported by the engine), I would have to pay $1'250. Of course that was way outside my budget. Too bad Unity wasn't available back then.</p>
-<p>A few years later as I was doing lots of webdev and the idea resurfaced. Inspired by the likes of GuildWars, Morrowwind, and Diablo I set out to create my very first multiplayer browser game. I remember my first line of code was something like this:</p>
+<p class="meta">About 8 minutes to read. Posted on June 11, 2021 09:28<p>When I was a teenager and writing my very first few lines of code, I dreamed of building a multiplayer game. Back then I was using the <a href="http://www.conitec.net/images/a4info.htm">3D GameStudio</a> A5 game engine. Sadly, that meant to even try multiplayer (that was supported by the engine), I would have to pay $1'250. Of course that was way outside my budget. Too bad Unity wasn't available back then.</p>
+<p>A few years later, as I was doing lots of webdev, the idea resurfaced. Inspired by the likes of GuildWars, Morrowwind, and Diablo I set out to create my very first multiplayer browser game. I remember my first line of code was something like this:</p>
 <pre><code>$warrior_health = 100;</code></pre>
-<p>Obviously, I had no clue how to go about designing a game. Making websites was easy, just copy what everyone else is doing. Of course browser games to copy also existed, but I really didn't like those. The most popular one I can remember from that time is Ogame, but many of them were similar. Click a button to start training or building a structure. Then come back in 24 hours to build the next one. Boring! Since that wasn't the kind of game I wanted to build, the idea got lost again.</p>
+<p>Obviously, I had no clue how to go about designing a game. Making websites was easy, just copy what everyone else is doing. Of course, browser games to copy also existed, but I really didn't like those. The most popular one I can remember from that time is Ogame, but many of them were similar. Click a button to start training or building a structure. Then come back in 24 hours to build the next one. Boring! Since that wasn't the kind of game I wanted to build, the idea got lost again.</p>
 <p>Fast forward 15 years later. We're in the middle of a pandemic and people are looking to connect online more than ever. This time I'm going to give this Idea a real chance, using all the knowledge I've gained over the past few years. This article is about that process.</p>
 <p>Here is a small preview:</p>
 <div class="img_pnl full-bleed"><img src="/images/title-image.jpg_60c6418a209417.14802220.jpg" /></div>
 <div class="header"><h2>Game Idea</h2></div>
-<p>What is my game going to be all about? How can we make a fun browser game? I already know I don't want it to be a waiting game, like Cookie Clicker or Ogame are.</p>
-<p>At the same time I want to preserve the elements that, in my opinion, make a good browser game:</p>
+<p>What is my game going to be all about? How can we make a fun browser game? I already know that I don't want it to be a waiting game, like Cookie Clicker or Ogame are.</p>
+<p>At the same time, I want to preserve the elements that, in my opinion, make a good browser game:</p>
 <ul><li>Works well with the players full attention over an extended period of time and with intermittent attention (for example if the player temporarily loses internet connection or gets distracted).<br></li>
 <li>Can be played on any type of device (with different input methods).</li>
 <li>Take advantage of being able to connect to other people.</li>
 </ul>
-<p>After some brainstorming I settled on an idea. The game would be about a group of people living through some kind of challenge. I was inspired by "Secret-Role" games like Mafia, Werewolf or Secret Hitler. Combined with "Choose your own Adventure" and Adventure room type games. These games require a group of players who then experience an adventure step by step. Each round takes the group closer to a conclusion.</p>
+<p>After some brainstorming, I settled on an idea. The game would be about a group of people living through some kind of challenge. I was inspired by "Secret-Role" games like Mafia, Werewolf or Secret Hitler. Combined with "Choose your own Adventure" and Adventure room type games. These games require a group of players who then experience an adventure step by step. Each round takes the group closer to a conclusion.</p>
 <p>These are the steps that I settled on for the first iteration of a game:</p>
 <div class="img_pnl "><img src="/images/workflow.png_60c4a701c4b3b9.41518145.png" /></div>
 <div class="header"><h2>Proof of Concept</h2></div>
@@ -58,15 +58,15 @@
 <p>Take a moment to see if you can figure out the answer.</p>
 <p>... Are you sure it's already been a minute? Alright...</p>
 <p>Severin is the only person both players can see. The other names are hallucinations. This event is the perfect example of what I imagined the game to be about. No single player has all the answers. The players must talk to each other in order to complete the challenges.</p>
-<p>Having gotten this far, I was satisfied this was all the functionality I needed to find out if anyone could enjoy the game concept. So I applied just a tiny bit of polish by setting a better font (Arial, huge upgrade) and adding buttons to progress the game, so I don't need to manually send API calls anymore.</p>
+<p>Having gotten this far, I was satisfied this was all the functionality I needed to find out if anyone could enjoy the game concept. So, I applied just a tiny bit of polish by setting a better font (Arial, huge upgrade) and adding buttons to progress the game, so I don't need to manually send API calls anymore.</p>
 <p>With all that setup I pitched the game concept to some of my friends and asked them if they thought a game like this could be enjoyable. This is what I showed them:</p>
 <div class="full-bleed embed"><div class="embed-container"><button data-embed="https://www.youtube.com/embed/BkcolHxykOA?autoplay=1&rel=0"><img class="logo" src="https://static.cdnlogo.com/logos/y/57/youtube-icon.svg"><img class="background" src="https://img.youtube.com/vi/BkcolHxykOA/maxresdefault.jpg"></button></div></div><p>They were intrigued enough that we ended up collaborating for a few weeks. Coming up with and iterating on different ideas for scenarios to add to the game.</p>
 <div class="header"><h2>Initial Story and UI</h2></div>
 <p>It quickly became clear that just making random events in a vacuum wouldn't cut it. At least not at this stage. To keep the player engaged it was necessary to have some sort of narrative. No problem, that sounds like something a game should have anyway. Here one of my friends came through again and delivered an amazing narrative in a cool universe (thanks Nathan!).</p>
 <p>Nathan's universe was a good foundation to build the theme for each of the encounters (or chapter, as I started calling them). His story also served as good inspiration for some of the chapters we wrote.</p>
-<p>Our process looked something like this: Once a week we would meet and play whatever version of the game was playable. Following the playtest we would discuss anything that needed improvement and any new ideas that had come up since the last time.</p>
+<p>Our process looked something like this: Once a week we would meet and play whatever version of the game was playable. Following the playtest, we would discuss anything that needed improvement and any new ideas that had come up since the last time.</p>
 <p>During this time I also grew sick of the black and white prototype interface, so I grabbed some free assets of <a href="https://itch.io/game-assets">itch.io</a>&nbsp;and put something together that resembled our theme. A fantasy world with sticks, swords, lots of raw metals and dragons to guard them.</p>
-<p>This is what our small tesm of friends was working with for most of that time:</p>
+<p>This is what our small team of friends was working with for most of that time:</p>
 <div class="full-bleed embed"><div class="embed-container"><button data-embed="https://www.youtube.com/embed/KMEOOK0AFY4?autoplay=1&rel=0"><img class="logo" src="https://static.cdnlogo.com/logos/y/57/youtube-icon.svg"><img class="background" src="https://img.youtube.com/vi/KMEOOK0AFY4/maxresdefault.jpg"></button></div></div><p>In the video above you can also see some hints to some basic mechanics like gold, health, sanity and items.</p>
 <div class="header"><h2>First release</h2></div>
 <p>Calling this version a "release" is only true in the sense that we gave other people access to the game. Nonetheless the player could experience a complete story arc, some OK puzzles and even some custom (beta) art for many of the encounters.</p>
@@ -80,11 +80,11 @@
 <p>While the game wasn't a breakout  success, people did at least find the idea intriguing enough to come back and give it a try. It's important to note here that people need to find a group to play with before they can start. That usually incurs a few days delay between the initial visit and starting a game.</p>
 <div class="header"><h2>Chapter 2</h2></div>
 <p>Inspired by the fact that people seemed to find the game concept interesting I decided to make a second major iteration. This time around I had more time to invest than the first time. What inspired me was the amazing opportunity to create something other people might enjoy playing. My job often involves creating things few people really care about, so the idea of creating something others might think of as good entertainment was and is enthralling.</p>
-<p>The goals I set for myself for the second iteration were two fold:</p>
+<p>The goals I set for myself for the second iteration were twofold:</p>
 <ol><li>Create about two hours of content focused on puzzles.</li>
 <li>Revamp the UI to make it responsive and more focused on gameplay elements.</li>
 </ol>
-<p>There won't be many specifics about the content in this article, because that's besides the point. It's about the process to create the new chapters. In general it involved more of what we did for the first story:</p>
+<p>There won't be many specifics about the content in this article, because that's beside the point. It's about the process to create the new chapters. In general, it involved more of what we did for the first story:</p>
 <ol><li>Brainstorm an interesting chapter / puzzle</li>
 <li>Implement a "shitty draft" of that puzzle</li>
 <li>Pester friends to play and see if it's fun</li>
@@ -92,22 +92,22 @@
 </ol>
 <p>Each chapter had to follow the lessons learned from the first release. These are things I watched people struggle with in playtesting and that dawned on me after a few months hiatus.</p>
 <ul><li>Each choice must mean something. There must be a valid reason to use each possible choice. The player is not always aware of that purpose from the outset.</li>
-<li>Every player must always have individual (different) choices, even if that is only in text. Otherwise players don't feel like independent.<br></li>
+<li>Every player must always have individual (different) choices, even if that is only in text. Otherwise players don't feel like they're independent.<br></li>
 <li>The players start united. Give opportunities to force the group apart and betray each other (or hide things). This is to prevent the group of simply listing off all possible actions to each other.<br></li>
 </ul>
 <div class="header"><h2>UI Revamp</h2></div>
-<p>Previously there was no mobile version, despite that being one of my criteria for a good browser game. Also I didn't like that the old UI was not focused on the gameplay. The meat of the game&nbsp;— the choices&nbsp;— are tucked away at the bottom left of the screen. Elements like progress and health overshadow the prompt to the questions in their screen presence.</p>
+<p>Previously there was no mobile version, despite that being one of my criteria for a good browser game. Also, I didn't like that the old UI was not focused on the gameplay. The meat of the game&nbsp;— the choices&nbsp;— are tucked away at the bottom left of the screen. Elements like progress and health overshadow the prompt to the questions in their screen presence.</p>
 <p>To solve these issues, and get an original style going, I contacted someone on <a href="https://www.fiverr.com/">fiverr</a> to rework the interface. I sent the person the link to the current game, annotated screenshots, and my thoughts on what I wanted changed. We agreed on doing a wireframe to start off. This was the result of that transaction:</p>
 <div class="img_pnl "><img src="/images/desktop_crop.jpg_60c61f31985b80.19221199.jpg" /></div>
 <p>My first reaction was that I loved the cave art at the center. The second reaction was that this just looked like the old UI, but with prettier graphics. While it was a value add in total, this was neither what I expected from a wireframe (what we agreed on) nor was it a graphical design (as it's black and white).</p>
 <p>As this is not my first rodeo when it comes to working with freelancers, I know that getting to know each other's skills and expectations is a big part of forming a good working relationship. Creating that bond takes time and since I'm footing the bill out of my own pocket, I decided not to invest too much into the project financially.</p>
-<p>For that reason I set out to redesign the UI on my own. Not something I enjoy doing. I just hope the result will be sufficient. The first step was to wireframe (according to my understanding of that term) how the layout should look like on mobile and desktop using <a href="https://draw.io">draw.io</a>.</p>
+<p>For that reason, I set out to redesign the UI on my own. Not something I enjoy doing. I just hope the result will be sufficient. The first step was to wireframe (according to my understanding of that term) how the layout should look like on mobile and desktop using <a href="https://draw.io">draw.io</a>.</p>
 <div class="header"><h3>Mobile Wireframes</h3></div>
 <div class="img_pnl full-bleed"><img src="/images/spritesheet (2).png_60c62712227192.86370359.png" /></div>
 <div class="header"><h3>Desktop Wireframes</h3></div>
 <div class="img_pnl full-bleed"><img src="/images/spritesheet (3).png_60c6292271dc55.72829311.png" /></div>
 <p>With these wireframes I, again, gathered feedback from my circle of friends. Many of them luckily have experience in media or web creation. Because of their positive feedback (and lack of negative opinions) I believe my goal of the interface being OK was met. I like the focus on gameplay elements much better in this version. Today I'm not sure if that focus came at the cost of some of the theme though.</p>
-<p>Before taking what I had and adding it to the game, I wanted to make sure that I had the responsive behavior locked down. Additionally I needed to see the result of the wireframes in the browser. To achieve those objectives I built a throwaway HTML prototype. Unlike what you might be used to, I actually did throw it away after fulfilling its purpose.</p>
+<p>Before taking what I had and adding it to the game, I wanted to make sure that I had the responsive behavior locked down. Additionally, I needed to see the result of the wireframes in the browser. To achieve those objectives I built a throwaway HTML prototype. Unlike what you might be used to, I actually did throw it away after fulfilling its purpose.</p>
 <div class="header"><h2>Prototype UI and final product</h2></div>
 <p>The prototype helped make a few more iterations on the layout and eventually I implemented the updated UI in the game. Check out this video to see the prototype and the eventual implementation in the browser.</p>
 <div class="full-bleed embed"><div class="embed-container"><button data-embed="https://www.youtube.com/embed/XketeeRNXXE?autoplay=1&rel=0"><img class="logo" src="https://static.cdnlogo.com/logos/y/57/youtube-icon.svg"><img class="background" src="https://img.youtube.com/vi/XketeeRNXXE/maxresdefault.jpg"></button></div></div><div class="header"><h2>Things I failed at</h2></div>
@@ -115,7 +115,7 @@
 <div class="header"><h3>Art</h3></div>
 <p>First, I would like to share with you this masterpiece:</p>
 <div class="img_pnl "><img src="/images/aseprite_face.png_60c8550256b675.78816925.png" /></div>
-<p>Isn't he pretty? Needless to say I am no artist. That was the first and last piece of art I tried to make for the game. I found other people to do those.</p>
+<p>Isn't he pretty? Needless to say, I am no artist. That was the first and last piece of art I tried to make for the game. I found other people to do those.</p>
 <div class="header"><h3>Landing pages</h3></div>
 <p>Something else I'm really struggling with at the moment is the landing pages. I'm reusing the game layout for the other pages on the website, including the descriptions about the game. The landing page currently looks like this:</p>
 <div class="img_pnl "><img src="/images/image.png_60c855e9dc7bb9.21198554.png" /></div>
