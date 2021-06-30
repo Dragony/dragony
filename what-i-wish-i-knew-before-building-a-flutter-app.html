@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>What I wish I knew before building a Flutter App</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="canonical" href="https://ma.ttias.ch/what-i-wish-i-knew-before-building-a-flutter-app.html">
+                    <link rel="stylesheet" href="/build/app.css">
+                            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PKFYZ4V14"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-8PKFYZ4V14');
+            </script>
+            </head>
+    <body>
+        <header>
+            <div class="links">
+                <a href="/"><span>≫</span> Blog</a>
+                <a href="/about.html" class="name"><span>▶</span> About me</a>
+                <a href="/services.html" class="name"><span>▶</span> Work with me</a>
+            </div>
+            <div class="preview">
+
+            </div>
+        </header>
+        <main class="wrapper">
+                <div class="header"><h1>What I wish I knew before building a Flutter App</h1></div>
+<p class="meta">About 5 minutes to read. Posted on June 30, 2021 12:45<p>For the last week I've been building an app with <a href="https://flutter.dev/">Flutter</a>. I don't have much experience building apps, so I opted for Flutter because I liked the promises it makes. Namely the crossplatform nature and the fast reload during development. Here are my first impressions:</p>
+<blockquote><span>Key insights</span><ul><li>Flutter is not a replacement for native app development</li>
+<li>The Dart language is very strictly typed</li>
+<li>Learning Flutter feels like learning HTML again</li>
+<li>It's easy to shoot yourself in the foot in regards to state</li>
+<li>Flutter is an incomplete framework</li>
+<li>Check your dependencies carefully<br></li>
+<li>The hot reloading is amazing</li>
+<li>Going beyond Material Design</li>
+</ul>
+</blockquote><div class="header"><h2>Flutter is not a replacement for native app development</h2></div>
+<p>The first surprise Flutter had in store for me was the fact that the documentation recommends the use of Android Studio or Visual Studio Code. Those are the very same tools you might already know from your previous experiences with app development. I know I did.</p>
+<p>A different way to describe Flutter is that it enables&nbsp;<a href="https://dart.dev/">Dart</a>&nbsp;to be used as a scripting language with an interpreter for different platforms. That means you're still talking to the same APIs as with any native App. In fact if you want to interface with any device capabilities, beyond showing UI and making HTTP requests, you will need to write the native code for those features.</p>
+<p>The advantage to using Flutter is the fact that <a href="https://pub.dev/">pub.dev</a>&nbsp;provides a repository of packages that enable those native implementations for you, by the community.</p>
+<div class="header"><h2>The Dart language is very strictly typed</h2></div>
+<p>I love strictly typed languages, so for me Dart feels like home. There is a range of strictness though and Dart leans towards being very strict. Much like my experience with Java. Here is my favorite screenshot I made during development:</p>
+<div class="img_pnl full-bleed"><a href="/images/image.png_60db2e39595246.12340895.png" target="_blank"><img src="/images/image.png_60db2e39595246.12340895.png" /></a></div>
+<p>The solution to the above error (displayed by Android Studio) was to add the <i>dynamic&nbsp;</i>keyword to the first parameter of the function in question.</p>
+<p>After the first few hours you should have encountered most of these quirks a few times and  they are, once you know what to look for, easy to fix. If you're like me, you might feel a tiny bit inferior until that point.</p>
+<div class="header"><h2>Learning Flutter feels like learning HTML again</h2></div>
+<p>The documentation I followed focused on using different UI elements. That makes sense, most of what an App does is in the UI and its elements. For the most part those elements are sorted in a tree.</p>
+<pre><code>MaterialApp
+└── StartScreen
+    └── Column
+        ├── Padding
+        │   └── DropdownButtonFormField
+        ├── Padding
+        │   └── Flexible
+        │       └── Text
+        └── ElevatedButton</code></pre>
+<p>Intuitively this kind of structure looks a lot like HTML (or XML) to me, just with Dart Classes instead of being plain text.</p>
+<p>That's where the similarities end though. Each of these elements has its own quirks you're going to have to learn the hard way. For example:</p>
+<p>Say you want to disable input on a Text Input field during loading. The Text Input has a property to achieve just that.&nbsp;Doing the same for a dropdown list is completely different. That element does not have the property in question. Instead you need to pass <i>null</i> to the&nbsp;<i>onChanged</i>&nbsp;property in place of your callback.</p>
+<p>On their own these design choices aren't bad. Just be aware that you have to learn all of these details, like learning the vocabulary for a new language.</p>
+<div class="header"><h2>It's easy to shoot yourself in the foot in regards to state</h2></div>
+<p>The solution offered for state management seems easy enough at first glance. Any Widget (roughly equal to a component) can have it's own state, or be stateless. It's easy to forget the lessions learned from <a href="https://redux.js.org/">Redux</a>&nbsp;or <a href="https://vuex.vuejs.org/">Vuex</a>. Having each component remember it's own state can easily devolve into a complex web of interconnected state changes, making the application hard to understand and debug.</p>
+<p>Instead you should try and keep a master record&nbsp;— a source of truth&nbsp;— somewhere near the top of the structure. From there you can pass values down the chain, just like you would in one of the aforementioned solutions.</p>
+<div class="header"><h2>Flutter is an incomplete framework</h2></div>
+<p>At first I hesitated to call Flutter a framework. It's main purpose is as a development tool for interoperability and programmer convenience. During the course of building my app though, I encountered many features that come out of the box and which I would consider part of a framework:</p>
+<ul><li>Routing (definition and navigation)<br></li>
+<li>Template language and components</li>
+<li>Debugging tools<br></li>
+<li>Theming<br></li>
+<li>Internationalization (i18n) support</li>
+<li>State management</li>
+</ul>
+<p>That's a nice start, but probably not all you need. If you plan on building a decent sized app, I suggest you think about building or searching for solutions in some areas, as the out of the box solution doesn't exist or is lacking.</p>
+<div class="header"><h3>Forms</h3></div>
+<p>Of course you can build forms with Flutter. How to access the data from each component varies though, as well as configurating the current state. Each row also requires some boilerplate code. For this reason I would recommend researching some kind of formbuilder or controller.</p>
+<div class="header"><h3>JSON Serialisation / Deserialization</h3></div>
+<p>In contrast to what you might be used to, handling JSON requires <a href="https://flutter.dev/docs/development/data-and-backend/json">some setup</a>&nbsp;for converting JSON into native Objects. If you don't need that, it's easy to parse a JSON string into String Maps. That might not be suitable if you have a large project.</p>
+<div class="header"><h3>Brand Styles</h3></div>
+<p>I listed&nbsp;theming as one of the builtin components. That's only half true. Some Widgets can be styled globally, without additional parameters. For others (<i>Text,&nbsp;</i>for example) their style needs to be set as a property every time. Consider setting up subclasses of some Widgets, or maybe a factory of some kind to avoid setting the attribute styles on every object by hand.</p>
+<div class="header"><h2>Check your dependencies carefully</h2></div>
+<p>As mentioned above, the packages you install are going to be responsible for the native implementation of their features. For my app I was testing on Android and everything was working fine. Out of curiosity I checked the source repository and found out that the iOS implementation is basically a no-op. Sure, the version number 0.0.1 also could have given me a hint, but let that be a lesson to all of us. Make sure your dependencies work well on all your target platforms, before you go all in on them.</p>
+<div class="header"><h2>The hot reloading is amazing</h2></div>
+<p>This is, in my opinion, the best feature of the bunch. Saving your changes and seeing your changes in under a second rivals the feedback loop for JavaScript applications. I expected this feature to only work in some situations, but in reality there are only a handful of situations I know of that require a full reload of the application. Those situations center around state management, specifically state&nbsp;initialisation.</p>
+<div class="header"><h2>Going beyond Material Design</h2></div>
+<p>Every example I found was based on Googles <a href="https://material.io/design">Material design</a>. What happens if you don't want your app to be in the Material Design style? I did some research and the general consensus seems to be as follows:</p>
+<ol><li>All the Widgets can be fully customized, even so far that they no longer have the Material design look.</li>
+<li>It doesn't make sense to reinvent the wheel for vital components like text inputs, navigation or similar common design element.</li>
+</ol>
+<p>Make of that what you will. In this case I can't speak from experience.</p>
+<div class="header"><h2>Conclusion</h2></div>
+<p>After one week my first application is done. It's just a tool for my own use, so it doesn't look fancy. It works really well though and for the most part almost everything was intuitive to use. A bigger application would require a lot more thought along the lines of my points above. Those are by no means showstoppers, so I can only recommend you give Flutter a try.</p>
+
+    <h2>Thank you for reading</h2>
+    <p>
+        I hope you enjoyed the article and maybe even learned something.
+        If you would like to stay in contact I have a <a href="http://eepurl.com/hrkncH">mailing list</a>
+        or you can reach out to me via <a href="https://ma.ttias.ch/about.html#social">social media</a>.
+    </p>
+    <footer class="full-bleed">
+        <div class="fin">
+            fin
+        </div>
+    </footer>
+        </main>
+                <script>
+            function loadEmbed(el) {
+                let iframe = document.createElement('iframe');
+                iframe.src = el.dataset.embed;
+                iframe.frameBorder = "0";
+                iframe.allowFullscreen = "";
+                el.parentNode.replaceChild(iframe, el);
+            }
+            document.querySelectorAll('.embed-container button').forEach(function(el){
+                el.addEventListener('click', loadEmbed.bind(this, el));
+            });
+        </script>
+    </body>
+</html>
