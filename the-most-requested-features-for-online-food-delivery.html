@@ -42,9 +42,9 @@
 </blockquote><div class="header"><h2>Each order has a requested delivery (or pickup) time attached</h2></div>
 <p>As you can probably imagine, food delivery is time critical. For one, because people tend to order because they're hungry. But also because food tends to decay over time. So if you're ordering a meal online you usually expect to receive it within a few hours of when it was cooked. For this reason every food order has an attached time for when the customer plans to receive (and probably consume) the ordered food.</p>
 <p>On the store frontend this information usually ends up as some kind of datepicker that shows available dates and times for when an order can be prepared:</p>
-<div class="img_pnl "><img src="/images/date_select.png" /></div>
+<div class="img_pnl "><a href="/images/date_select.png" target="_blank"><img src="/images/date_select.png" /></a></div>
 <p>And the associated time picker:</p>
-<div class="img_pnl "><img src="/images/time_select.png" /></div>
+<div class="img_pnl "><a href="/images/time_select.png" target="_blank"><img src="/images/time_select.png" /></a></div>
 <p>There are some details to this implementation, such as verifying the date is not in the past, and that the date has not since become invalid. That can happen if the opening hours were changed, or the date has become unavailable for some other reason (see throttling orders).</p>
 <div class="header"><h2>The online presence needs to reflect store opening hours</h2></div>
 <p>Now that we've established why each order needs to have a time attached, it becomes evident that our online presence needs to support some kind of opening hours.</p>
@@ -62,10 +62,10 @@
 <p>Regardless of what solution you choose, there will be some kind of limit where the cost of the delivery outweighs the price of the order. For that reason it is vital that your online store can support this scenario.</p>
 <p>The correct way to validate this is a topic of debate. Some stores require you to enter your location before you see any products. Others validate your order at the end of the checkout process. It all comes down to weighing the ease of use and accessibility versus when to validate that the order can actually be fulfilled.</p>
 <p>An example of how Uber Eats handles locations that can't be delivered to:</p>
-<div class="img_pnl "><img src="/images/uber_eats_example.png" /></div>
+<div class="img_pnl "><a href="/images/uber_eats_example.png" target="_blank"><img src="/images/uber_eats_example.png" /></a></div>
 <p>They simply don't display any products at all.</p>
 <p>Doordash handles this case a little better:</p>
-<div class="img_pnl "><img src="/images/doordash_example.png" /></div>
+<div class="img_pnl "><a href="/images/doordash_example.png" target="_blank"><img src="/images/doordash_example.png" /></a></div>
 <div class="header"><h2>Number of orders need to be throttled per time period</h2></div>
 <p>Let's assume you are a thriving online food delivery business. Each Friday hundreds of orders come in. You've made it!</p>
 <p>Except now you have probably a new problem: 90% of the orders gravitate to two points of the day: noon and evening. The reason why is obvious, it's when people usually eat their meals.</p>
@@ -84,7 +84,7 @@
 </ul>
 <p>Another way of thinking about it is that each of your kitchens might be their very own store and online shop. That's a lot to ask of typical ecommerce solutions.</p>
 <p>Most of this complexity can be hidden from the customer by simply asking them to choose at location at the beginning of the order process:</p>
-<div class="img_pnl "><img src="/images/location_select.png" /></div>
+<div class="img_pnl "><a href="/images/location_select.png" target="_blank"><img src="/images/location_select.png" /></a></div>
 <p>This deceptively simple widget carries with it a lot of work for many of your backend systems (Webshop, CRM, PIM, etc).</p>
 <div class="header"><h2>Products that are only available for specific delivery or pickup times</h2></div>
 <p>An first glance this point may be the same as previous. It is, but I want to bring special attention to it because lots of restaurants offer some sort of Lunch Menus. Incase you're somehow not aware: Lunch menus are special deals that are prepared specifically for lunch time. Usually these meals are prepared in bulk and are cheaper because of it.</p>

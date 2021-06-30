@@ -1,7 +1,5 @@
 https://ma.ttias.ch/fulfilling-my-childhood-dream-to-build-a-browser-game.html
-https://ma.ttias.ch/websockets-are-a-mess-there-are-better-options.html
 https://ma.ttias.ch/how-to-setup-valid-ssl-on-wsl.html
-https://ma.ttias.ch/leadership-is-about-saying-yes-management-about-saying-no.html
 https://ma.ttias.ch/the-most-requested-features-for-online-food-delivery.html
 https://ma.ttias.ch/what-i-wish-i-knew-before-building-a-shopify-app.html
 https://ma.ttias.ch/how-top-performers-can-be-a-curse-for-agencies.html
